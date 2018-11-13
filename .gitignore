@@ -6,3 +6,5 @@ out/*
 AnotherModule/.gradle/
 examples/.gradle/
 out/
+.gradle
+.gradle/*
