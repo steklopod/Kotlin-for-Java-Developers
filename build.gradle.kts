@@ -1,23 +1,25 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-group = "ru.steklopod"
-version = "1.0-SNAPSHOT"
-
 plugins {
-    java
-    application
-    kotlin("jvm") version "1.3.0-release-212"
+    val kotlinVersion = "1.3.10"
+    id("org.springframework.boot") version "2.0.5.RELEASE"
+    id("org.jetbrains.kotlin.jvm") version kotlinVersion
+    id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion
+    id("org.jetbrains.kotlin.plugin.jpa") version kotlinVersion
+    id("io.spring.dependency-management") version "1.0.5.RELEASE"
 }
 
+version = "1.0.0-SNAPSHOT"
 
-dependencies {
-    compile group : 'org.jetbrains', name: 'annotations', version: '16.0.3'
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs = listOf("-Xjsr305=strict")
+    }
+}
 
-    testCompile("junit:junit:4.12")
-    compile(kotlin("stdlib-jdk8"))
-    compile(kotlin("reflect"))
-    testCompile(kotlin("test"))
-    testCompile(kotlin("test-junit"))
+val test by tasks.getting(Test::class) {
+    useJUnitPlatform()
 }
 
 repositories {
@@ -26,21 +28,16 @@ repositories {
     jcenter()
 }
 
-kapt {
-    useBuildCache = true
-}
-
-configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-}
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "1.8"
-        freeCompilerArgs = listOf("-Xjsr305=strict", "-Xjvm-default=enable")
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("com.h2database:h2")
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    compile("org.jetbrains.kotlin:kotlin-reflect")
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin")
+    testCompile("org.springframework.boot:spring-boot-starter-test") {
+        exclude(module = "junit")
     }
-}
-
-task<Wrapper>("wrapper") {
-    gradleVersion = "4.10.2"
-    distributionType = Wrapper.DistributionType.ALL
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
