@@ -1,8 +1,8 @@
 package learnkotlin._26javainteroperability.javafromkotlin;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
+import com.sun.istack.internal.NotNull;
+import com.sun.istack.internal.Nullable;
 
 public class Car {
 
@@ -53,7 +53,8 @@ public class Car {
         this.model = model;
     }
 
-    public @NotNull int getYear() {
+    public @NotNull
+    int getYear() {
         return year;
     }
 
