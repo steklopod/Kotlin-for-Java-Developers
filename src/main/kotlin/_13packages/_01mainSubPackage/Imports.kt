@@ -13,10 +13,10 @@ package _13packages._01mainSubPackage
 // same for enums. We can import single enums or all of them with *
 
 // we can also rename imports; and also upperFirstAndLast is an extension function ;)
-import learnkotlin._11Objects.PrinterCopyrightNotice
-import learnkotlin._12enums.Department.ACCOUNTING
-import learnkotlin._13packages._02otherSubPackage.topLevelFunction
-import learnkotlin._09functions.upperFirstAndLast as transform
+import _11Objects.PrinterCopyrightNotice
+import _12enums.Department.ACCOUNTING
+import _13packages._02otherSubPackage.topLevelFunction
+import _09functions.upperFirstAndLast as transform
 
 // again, private means visible from the same file only
 private fun privateTopLevelFun() = "i'm private to this file"

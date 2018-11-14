@@ -1,8 +1,8 @@
 package _027challenge6.part2.callkotlinfromjava;
 
-import learnkotlin._027challenge6.part2.kotlincode.Challenge;
-import learnkotlin._027challenge6.part2.kotlincode.Employee;
-import learnkotlin._027challenge6.part2.kotlincode.KotlinCodeKt;
+import _027challenge6.part2.kotlincode.Challenge;
+import _027challenge6.part2.kotlincode.Employee;
+import _027challenge6.part2.kotlincode.KotlinCodeKt;
 
 public class CallKotlinFromJava {
 

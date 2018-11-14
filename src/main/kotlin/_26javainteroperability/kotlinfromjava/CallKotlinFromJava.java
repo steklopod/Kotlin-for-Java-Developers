@@ -1,8 +1,8 @@
 package _26javainteroperability.kotlinfromjava;
 
-import learnkotlin._26javainteroperability.kotlinfromjava.Car;
-import learnkotlin._26javainteroperability.kotlinfromjava.KotlinCar;
-import learnkotlin._26javainteroperability.kotlinfromjava.SingletonCar;
+import _26javainteroperability.kotlinfromjava.Car;
+import _26javainteroperability.kotlinfromjava.KotlinCar;
+import _26javainteroperability.kotlinfromjava.SingletonCar;
 
 import java.io.IOException;
 

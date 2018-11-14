@@ -41,7 +41,7 @@ fun main(args: Array<String>) {
     val someString = something as? String
     println(someString)
 
-    // non null assertion with !! If str is indeed null, 'learnkotlin.learnkotlin.NullPointerException' is thrown
+    // non null assertion with !! If str is indeed null, 'NullPointerException' is thrown
     val noNullString: String? = "This is definitely noy null"
     val anotherNotNullString = noNullString!!.toUpperCase()
 

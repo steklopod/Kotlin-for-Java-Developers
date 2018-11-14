@@ -3,7 +3,7 @@
 *.iml
 lib/*
 out/*
-AnotherModule/.gradle/
+src/AnotherModule/.gradle/
 examples/.gradle/
 out/
 .gradle

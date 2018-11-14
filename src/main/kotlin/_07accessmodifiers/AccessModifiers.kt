@@ -1,9 +1,9 @@
 package _07accessmodifiers
 
-import learnkotlin._08constructors.AnotherDepartment
-import learnkotlin._08constructors.Department
-import learnkotlin._08constructors.Employee
-import learnkotlin._08constructors.SecondaryConstructorOnly
+import _08constructors.AnotherDepartment
+import _08constructors.Department
+import _08constructors.Employee
+import _08constructors.SecondaryConstructorOnly
 
 val MY_CONSTANT = 100
 

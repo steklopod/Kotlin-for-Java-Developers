@@ -1,6 +1,6 @@
 package _04datatypes
 
-import learnkotlin._00javacode.Dummyclass
+import _00javacode.Dummyclass
 
 fun main(args: Array<String>) {
 
