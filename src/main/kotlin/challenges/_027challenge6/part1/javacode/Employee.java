@@ -1,4 +1,4 @@
-package _027challenge6.part1.javacode;
+package challenges._027challenge6.part1.javacode;
 
 public class Employee {
 

@@ -1,4 +1,4 @@
-package _14challenge3.kotlin
+package challenges._14challenge3.kotlin
 
 fun main(args: Array<String>) {
 

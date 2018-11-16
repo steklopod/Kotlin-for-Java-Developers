@@ -1,6 +1,6 @@
-package _027challenge6.part1.kotlincode
+package challenges._027challenge6.part1.kotlincode
 
-import _027challenge6.part1.javacode.Employee
+import challenges._027challenge6.part1.javacode.Employee
 
 fun main(args: Array<String>) {
 

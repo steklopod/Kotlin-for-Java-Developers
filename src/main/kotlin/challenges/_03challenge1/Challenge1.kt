@@ -1,4 +1,4 @@
-package _03challenge1
+package challenges._03challenge1
 
 fun main(args: Array<String>) {
     val hello1: String = "Hello"

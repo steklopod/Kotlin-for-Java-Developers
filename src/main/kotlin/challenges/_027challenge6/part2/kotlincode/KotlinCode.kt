@@ -1,4 +1,4 @@
-package _027challenge6.part2.kotlincode
+package challenges._027challenge6.part2.kotlincode
 
 fun sayHelloToJava(name: String) {
     println("Kotlin says hello to Java and $name")

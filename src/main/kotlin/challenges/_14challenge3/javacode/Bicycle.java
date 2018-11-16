@@ -1,4 +1,4 @@
-package _14challenge3.javacode;
+package challenges._14challenge3.javacode;
 
 
 public class Bicycle {
