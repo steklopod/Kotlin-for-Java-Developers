@@ -6,11 +6,12 @@
 Это означает, что весь код, написанный на Java, может быть использован в Kotlin и наоборот.
 
 
-# Основы
+Данный проект содержи примеры кода из курса [Kotlin for Java Developers](https://learnprogramming.academy/courses/kotlin-for-java-developers/).
 
-## Hello World!
+Ниже приведены примеры для беглого ознакомления с данным языком:
+#### Hello World!
 
-Let's start from the basics
+Начнем с простого:
 
 Kotlin:
 ```kotlin
@@ -22,8 +23,6 @@ fun main(args: Array<String>) {
 ```
 Java:
 ```java
-
-
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello World!");
@@ -33,7 +32,8 @@ public class HelloWorld {
 
 ## Null Safety
 
-In Kotlin, we don't need to check nullability any longer (unless we're using some Java library). For this purpose, Kotlin introduces the *?* character for this.
+В Kotlin нам больше не нужно проверять `nullability`. Для этой цели Котлин вводит символ 
+**`?`** для этого.
 
 Kotlin:
 ```kotlin
@@ -44,14 +44,13 @@ println(file?.size())
 Java:
 ```java
 File file = new File("myFile");
-if (file != null) {
-    System.out.println(file.size());
-}
+if (file != null)  System.out.println(file.size());
+
 ```
 
-## Smart Casts
+## Smart Casts (умное приведение типов)
 
-Another feature I really like in Kotlin is the smart casts. 
+Еще одна особенность, которая мне очень нравится в Kotlin, - это умные приведение типов. 
 
 Kotlin:
 ```kotlin
@@ -85,7 +84,7 @@ public void myFunction(Object obj) {
 
 ## Singletons
 
-This is the implementation of the Singleton pattern in Java:
+Это реализация шаблона `Singleton` в Java:
 
 ```java
 public class MySingleton {
@@ -106,7 +105,8 @@ public class MySingleton {
 }
 ```
 
-However, in Kotlin, we have a new type of class called *object* which is a singleton by nature:
+Однако в Kotlin у нас есть новый тип класса **`object`**, который по своей природе является 
+одноэлементным:
 
 ```kotlin
 object MySingleton {
@@ -118,11 +118,11 @@ object MySingleton {
 
 ## Unit vs Void
 
-Unit in Kotlin is the equivalent in Java to Void.
+`Unit` в Kotlin эквивалентна в Java `void`.
 
 ## Strings
 
-As in Groovy, in Kotlin the variables are replaced directly in strings.
+В Kotlin переменные заменяются непосредственно в строках.
 
 Kotlin:
 ```kotlin
@@ -136,9 +136,8 @@ String name = "Jose";
 String helloName = String.format("Hello %s!", name);
 ```
 
-## Delegation Properties
-
-Kotlin has a very nice feature to implement the [delegation pattern](https://en.wikipedia.org/wiki/Delegation_pattern):
+## Delegation Properties (Свойства Делегирования)
+Kotlin имеет очень хорошую функцию для реализации [шаблона делегирования](https://ru.wikipedia.org/wiki/Шаблон_делегирования):
 
 ```kotlin
 interface Engine {
