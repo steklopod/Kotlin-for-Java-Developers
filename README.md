@@ -5,7 +5,6 @@
 `Kotlin` - это статически типизированный объектно-ориентированный язык на JVM, как и Java. 
 Это означает, что весь код, написанный на Java, может быть использован в Kotlin и наоборот.
 
-
 Данный проект содержи примеры кода из курса [Kotlin for Java Developers](https://learnprogramming.academy/courses/kotlin-for-java-developers/).
 
 Ниже приведены примеры для беглого ознакомления с данным языком:
@@ -156,9 +155,10 @@ fun main(args: Array<String>) {
 }
 ```
 
-Car is defined by an engine and we delegate it to the *e* property "(e: Engine) : Engine by e".
+Автомобиль определяется двигателем, и мы делегируем его свойству **`e`** `(e: Engine): Engine by e`.
 
-However, I think the most interesting feature is the [**delegation properties**](https://kotlinlang.org/docs/reference/delegated-properties.html). We can configure the properties to have a delegate in between:
+Тем не менее, я думаю, что наиболее интересной особенностью являются свойства делегирования. 
+Мы можем настроить свойства, чтобы иметь делегат между ними:
 
 ```kotlin
 import kotlin.reflect.KProperty
@@ -186,14 +186,13 @@ fun main(args: Array<String>) {
     println(car.engine) // output: Electric
 }
 ```
+В вышеприведенном примере, мы изменяем поведение двигателя в зависимости от поля скорости в экземпляр HybridCar.
 
-In the above example, we are changing the behaviour of the engine depending on the speed field into the HybridCar instance. 
+Существует три типа встроенных делегатов в Котлине:
 
-There are three types of in-built delegates in Kotlin:
+### Lazy (Ленивый):
 
-**- Lazy:**
-
-The value gets computed only upon first access:
+Значение вычисляется только при первом доступе:
 
 ```kotlin
 import kotlin.lazy
@@ -206,9 +205,9 @@ class LazyCar {
 }
 ```
 
-**- Observable:**
+### Observable (Наблюдаемый):
 
-This delegate allows to track the changes in the properties:
+Этот делегат позволяет отслеживать изменения в свойствах:
 
 ```kotlin
 import kotlin.properties.Delegates
@@ -226,7 +225,7 @@ fun main(args: Array<String>) {
 }
 ```
 
-**- Storing Properties in a Map:**
+### Хранение свойств в отображении (в Map):
 
 ```kotlin
 class SerializedCar (val map: Map<String, Any?>) {
@@ -243,9 +242,10 @@ fun main(args: Array<String>) {
 }
 ```
 
-# Functions
+## Functions
 
-Kotlin works like Javascript where you can write a function under any scope and this function will be directly available. In Java, all the functions are tied to a class. 
+Kotlin работает как Javascript, где вы можете написать функцию в любой области, и эта функция будет доступна напрямую. 
+В Java, все функции привязаны к классу: 
 
 Kotlin:
 ```kotlin
@@ -271,9 +271,11 @@ public class Functions {
 }
 ```
 
-## Overloading
+## Overloading (перегрузка)
 
-Kotlin allows to set default values in the parameters of a function. This is something I was realling missing from a while in Java, so we don't need to overload too many methods as we had to do so far.
+Kotlin позволяет задавать значения по умолчанию в параметрах функции. Это то, чего мне не 
+хватало некоторое время в Java, поэтому нам не нужно перегружать слишком много методов, как нам 
+приходилось делать до сих пор.
 
 Kotlin:
 ```kotlin
@@ -297,11 +299,12 @@ public void doSomething(String name, int number, String address) {
 }
 ```
 
-Both code snippets are equivalent.
+Оба фрагмента кода эквивалентны.
 
-# Classes
+# Classes (классы)
 
-In Java, classes have fields and setters/getters for these fields. In Kotklin, classes only have mutable or inmmutable properties. 
+В Java, классы имеют поля и сеттеры/геттеры для этих полей. В Kotlin классы имеют только 
+изменяемые или неизменяемые (`inmmutable`) свойства. 
 
 Kotlin:
 ```kotlin
@@ -314,7 +317,8 @@ fun main(args: Array<String>) {
 }
 ```
 
-As we can see, we declare a property as immutable using *val* and mutable using *var*. This class is equivalent to:
+Как мы видим, мы объявляем свойство как неизменяемое с помощью `val` и изменяемое с помощью `var`. 
+Этот класс эквивалентен:
 
 Java:
 ```java
@@ -348,16 +352,17 @@ public class User {
 }
 ```
 
-## ToString and Equals/HashCode
+## ToString & Equals/HashCode
 
-In Java, we needed to implement the toString, equals and hashCode too often. In Kotlin, we can only use the [*data*](https://kotlinlang.org/docs/reference/data-classes.html) modified.
+В Java нам слишком часто приходилось реализовывать `toString`, `equals` и `hashCode`. 
+В Kotlin мы можем использовать [классы данных](https://kotlinlang.ru/docs/reference/data-classes.html.
 
 Kotlin:
 ```kotlin
 data class User(val name: String, var age: Int)
 ```
 
-In Java, this is equivalent to (we skipped the hashCode and some other methods):
+В Java это эквивалентно (мы пропустили хэш-код и некоторые другие методы):
 
 ```java
 public class User {
@@ -384,7 +389,8 @@ public class User {
 }
 ```
 
-Let's note that we can use [Lombok](https://projectlombok.org/) in Java to auto-implement these methods as:
+Отметим, что мы можем использовать [Lombok]((https://projectlombok.org/)) в Java для 
+автоматической реализации этих методов, как:
 
 ```java
 @Data
@@ -393,9 +399,10 @@ public class User {
 }
 ```
 
-## Inheritance
+## Inheritance (Наследование)
+В Java по умолчанию все классы могут наследовать, но классы, помеченные как `final`. 
+В Котлин, наоборот, мы не можем наследовать класс, если помечен как `open`:
 
-In Java, by default all the classes are able to be inherit, but the classes marked as final. In Kotlin, it's the oppositve, we cannot inherit to a class unless is marked as *open*:
 
 ```kotlin
 open class Car(var engine: String)
@@ -403,9 +410,10 @@ open class Car(var engine: String)
 public class Ferrari: Car("diesel")
 ```
 
-## Extensions
-
-[Extensions](https://kotlinlang.org/docs/reference/extensions.html) in Kotlin works like in C# and similar to Javascript. We can add custom extensions to our classes or even to properties and group these extensions into a package.
+## Extensions (Расширения)
+[Расширения](https://kotlinlang.ru/docs/reference/extensions.html) в Kotlin работают как в C# 
+и похожи на Javascript. Мы можем добавлять 
+пользовательские расширения в наши классы или даже в свойства и группировать эти расширения в пакет.
 
 ```kotlin
 package examples.kotlin
@@ -420,10 +428,8 @@ fun main(args: Array<String>) {
 }
 ```
 
-If we move the hasTable into another package, all we need to do is to import the other package and we will have visility to invoke the new method or extension.
+Если мы переместим `hasTable` в другой пакет, все, что нам нужно сделать, это импортировать 
+другой пакет, и у нас будет видимость для вызова нового метода или расширения.
 
-# Conclusion
 
-There are a lot of topics around Kotlin and this post will remain in work-in-progress state for a while. I will be adding new sections in the future while I learn Kotlin. 
-
-See [my Github repository](https://github.com/Sgitario/kotlin-for-java-developers) for a full example.
+_Если этот проект окажется полезным тебе - нажми на кнопочку **`★`** в правом верхнем углу._
