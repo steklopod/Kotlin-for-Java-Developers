@@ -1,5 +1,3 @@
-package _00javacode;
-
 public class Dummyclass {
 
     public String isVacationTimePrimitive (boolean onVacation) {

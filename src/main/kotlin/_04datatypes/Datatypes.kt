@@ -1,6 +1,6 @@
 package _04datatypes
 
-import _00javacode.Dummyclass
+import Dummyclass
 
 fun main(args: Array<String>) {
 

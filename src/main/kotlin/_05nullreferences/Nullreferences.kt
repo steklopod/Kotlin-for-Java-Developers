@@ -11,6 +11,7 @@ fun main(args: Array<String>) {
     // smart casting to the rescue
     if (strTwo != null) {
         strTwo.toUpperCase()
+
     }
 
     // but even better, we can use the safe access expression
