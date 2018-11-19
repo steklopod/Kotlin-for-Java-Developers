@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
     // плохая практика   :-(
     if (strTwo != null) strTwo.toUpperCase()
 
-    // хоршая практика   :-)
+    // хорошая практика   :-)
     strTwo?.toUpperCase()
     println("Let's see what happens here: ${strOne?.toUpperCase()}")
 
